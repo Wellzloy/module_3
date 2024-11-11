@@ -16,8 +16,7 @@ def is_contains(sting: str, list_to_search: list):
     count_calls()
     sting = sting.lower()
     for i in list_to_search:
-        i = i.lower()
-        if i == sting:
+        if i.lower() == sting:
             return True
     return False
 
