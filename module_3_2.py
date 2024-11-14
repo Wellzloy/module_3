@@ -1,11 +1,10 @@
 def send_email(message, recipient, sender='university.help@gmail.com'):
-    if '@' not in recipient:
-        print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
-    elif '@' not in sender:
-        print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
-    elif not recipient.endswith(('.com', '.ru', '.net')):
-        print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
-    elif not sender.endswith(('.com', '.ru', '.net')):
+    if '@' not in sender or '@' not in recipient or (not recipient.endswith('.ru')
+                                                     and not recipient.endswith('.com')
+                                                     and not recipient.endswith('.net')
+                                                     or (not sender.endswith('.ru')
+                                                         and not sender.endswith('.com')
+                                                         and not sender.endswith('.net'))):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
     elif sender == recipient:
         print('Нельзя отправить письмо самому себе!')
