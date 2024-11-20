@@ -13,6 +13,9 @@ def sum_numbers_lengths(data_structure):
     if isinstance(data_structure, str):
         result += len(data_structure)
 
+    if isinstance(data_structure, bool):
+        result += data_structure
+
     elif isinstance(data_structure, (int, float)):
         result += data_structure
 
